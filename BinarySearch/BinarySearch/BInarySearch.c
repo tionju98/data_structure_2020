@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int BSearch(int ar[], int len, int target)		//ÀÌÁøÅ½»ö ¾Ë°í¸®Áò Àû¿ëµÈ ÇÔ¼ö
+int BSearch(int ar[], int len, int target)		//ì´ì§„íƒìƒ‰ ì•Œê³ ë¦¬ì¦˜ ì ìš©ëœ í•¨ìˆ˜
 {
 	int first = 0;
 	int last = len - 1;
@@ -8,20 +8,20 @@ int BSearch(int ar[], int len, int target)		//ÀÌÁøÅ½»ö ¾Ë°í¸®Áò Àû¿ëµÈ ÇÔ¼ö
 
 	while (first <= last)
 	{
-		mid = (first + last) / 2;	//Å½»ö ´ë»óÀÇ Áß¾ÓÀ» Ã£´Â´Ù.
+		mid = (first + last) / 2;	//íƒìƒ‰ ëŒ€ìƒì˜ ì¤‘ì•™ì„ ì°¾ëŠ”ë‹¤.
 		
-		if (target == ar[mid]) {	//Áß¾Ó¿¡ ÀúÀåµÈ °ÍÀÌ Å¸°ÙÀÌ¶ó¸é
-			return mid;				//Å½»ö ¿Ï·á!
+		if (target == ar[mid]) {	//ì¤‘ì•™ì— ì €ì¥ëœ ê²ƒì´ íƒ€ê²Ÿì´ë¼ë©´
+			return mid;				//íƒìƒ‰ ì™„ë£Œ!
 		}
-		else						// Å¸°ÙÀÌ ¾Æ´Ï¶ó¸é Å½»ö ´ë»óÀ» ¹İÀ¸·Î ÁÙÀÎ´Ù.
+		else						// íƒ€ê²Ÿì´ ì•„ë‹ˆë¼ë©´ íƒìƒ‰ ëŒ€ìƒì„ ë°˜ìœ¼ë¡œ ì¤„ì¸ë‹¤.
 		{
 			if (target < ar[mid])
-				last = mid - 1;
-			else
-				first = mid + 1;
+				last = mid - 1;`		//ê°’ì„ í•˜ë‚˜ë¥¼ ë”í•˜ê±°ë‚˜ ë¹¼ì§€ ì•Šìœ¼ë©´ midì— ì €ì¥ëœ ì¸ë±ìŠ¤ ê°’ì˜ ë°°ì—´ ìš”ì†Œë„
+			else					//ìƒˆë¡œìš´ íƒìƒ‰ì˜ ë²”ìœ„ì— í¬í•¨ëœë‹¤. ì´ëŠ” ë¶ˆí•„ìš”í•œ ì¼ì´ë‹¤.
+				first = mid + 1;		//midì˜ ë°°ì—´ìš”ì†Œì— íƒìƒ‰ ëŒ€ìƒì´ ì €ì¥ë˜ì–´ ìˆëŠ”ì§€ ê²€ì‚¬ê°€ ì´ë¯¸ ëë‚œ ìƒíƒœì´ê¸° ë•Œë¬¸
 		}
 	}
-	return -1;		//Ã£Áö ¸øÇßÀ» ¶§ ¹İÈ¯ÇÏ´Â °ª -1
+	return -1;		//ì°¾ì§€ ëª»í–ˆì„ ë•Œ ë°˜í™˜í•˜ëŠ” ê°’ -1
 }
 
 int main(void) {
@@ -30,16 +30,16 @@ int main(void) {
 
 	idx = BSearch(arr, sizeof(arr) / sizeof(int), 7);
 	if (idx == -1)
-		printf("Å½»ö ½ÇÆĞ \n");
+		printf("íƒìƒ‰ ì‹¤íŒ¨ \n");
 	else
-		printf("Å¸ÄÏ ÀúÀå ÀÎµ¦½º : %d \n", idx);
+		printf("íƒ€ì¼“ ì €ì¥ ì¸ë±ìŠ¤ : %d \n", idx);
 
 
 	idx = BSearch(arr, sizeof(arr) / sizeof(int), 4);
 	if (idx == -1)
-		printf("Å½»ö ½ÇÆĞ \n");
+		printf("íƒìƒ‰ ì‹¤íŒ¨ \n");
 	else
-		printf("Å¸ÄÏ ÀúÀå ÀÎµ¦½º : %d \n", idx);
+		printf("íƒ€ì¼“ ì €ì¥ ì¸ë±ìŠ¤ : %d \n", idx);
 
 	return 0;
 
